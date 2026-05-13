@@ -1,0 +1,39 @@
+=================================================================
+RESERVOIR DISPATCH OPTIMIZATION — VALIDATION REPORT
+=================================================================
+Generated: 2026-05-13
+
+PROBLEM PARAMETERS
+----------------------------------------
+  Initial storage V0    :      500,000 m3
+  Min storage V_min     :      100,000 m3
+  Max storage V_max     :    1,000,000 m3
+  Min eco release Q_eco :         10.0 m3/s
+  Max release Q_max     :        100.0 m3/s
+  Hydraulic head H      :         30.0 m
+  Turbine efficiency    :         0.85
+  K_HYDRO factor        :      250.155 kW/(m3/s)
+  Storage tolerance TOL :          500 m3
+
+OPTIMAL RELEASE SCHEDULE
+----------------------------------------
+   Day   Inflow    Release     Storage   Price    Revenue
+     1     15.0    10.6094   879,350    0.08  5,095.66
+     2     12.0    10.6094   999,500    0.08  5,095.66
+     3     10.0    10.0000   999,500    0.08  4,802.98
+     4      8.0    10.0000   826,700    0.08  4,802.98
+     5     12.0    10.0000   999,500    0.10  6,003.72
+     6     15.0    25.4051   100,500    0.12 18,303.01
+     7     18.0    18.0000   100,500    0.10 10,806.70
+
+  TOTAL REVENUE: $54,910.69
+
+CONSTRAINT VERIFICATION
+----------------------------------------
+  Release bounds [Q_eco=10.0, Q_max=100.0] m3/s : PASS
+  Storage bounds [V_min=100000, V_max=1000000] m3  : PASS
+  Mass balance (max error = 0.00e+00 m3)         : PASS
+  Ecological violations                              : 0
+  Solution feasible                                  : YES
+
+  All constraints satisfied. Solution is physically valid.
