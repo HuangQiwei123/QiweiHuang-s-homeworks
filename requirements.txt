@@ -1,0 +1,9 @@
+folium
+matplotlib
+numpy
+pandas
+pytest
+requests
+scipy
+streamlit
+streamlit-folium
