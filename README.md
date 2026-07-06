@@ -1,6 +1,6 @@
 # Software Development -- Specialized Experiments
 
-**Xi'an Jiaotong University · Huang Qiwei · 2026**
+**Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026**
 
 Four water-related engineering experiments built end-to-end with AI-assisted software development. Each project follows the same workflow: structured prompting, AI-generated code, iterative refinement, physical validation, and documented outputs.
 
@@ -10,14 +10,14 @@ Four water-related engineering experiments built end-to-end with AI-assisted sof
 
 ```text
 QiweiHuang-s-homeworks/
-├── Project-1-Short-term-Rainfall-Forecasting-and-Alert-System
-│   └── Rainfall monitoring dashboard and warning logic
-├── Project-2-Hydrological-Modeling-SCS-CN-Runoff
-│   └── SCS-CN runoff calculation and sensitivity analysis
-├── Project-3-Water-Resources-Optimization-Reservoir-Dispatch
-│   └── Reservoir dispatch optimization and trade-off analysis
-└── Project-4-Flood-Inundation-Analysis-DEM-based
-    └── DEM-based flood simulation, visualization, and validation
+|-- Project-1-Short-term-Rainfall-Forecasting-and-Alert-System
+|   `-- Rainfall monitoring dashboard and warning logic
+|-- Project-2-Hydrological-Modeling-SCS-CN-Runoff
+|   `-- SCS-CN runoff calculation and sensitivity analysis
+|-- Project-3-Water-Resources-Optimization-Reservoir-Dispatch
+|   `-- Reservoir dispatch optimization and trade-off analysis
+`-- Project-4-Flood-Inundation-Analysis-DEM-based
+    `-- DEM-based flood simulation, visualization, and validation
 ```
 
 ---
@@ -35,7 +35,6 @@ Real-time rainfall monitoring using OpenWeatherMap data or simulation mode. The 
 | Python files | `weather_monitor.py` · `export_map.py` |
 | Output files | `alert_log.txt` · `rainfall_history.csv` · `rainfall_map.html` |
 | Docs | `Experiment1_Rainfall_Alert.docx` · `prompt_log.md` · `report.tex` · `README.md` |
-| Screenshots | `screenshots/1.png` · `screenshots/2.png` · `screenshots/3.png` · `screenshots/4.png` · `screenshots/dashboard-page.png` |
 | Dependencies | `streamlit` · `streamlit-folium` · `folium` · `requests` · `pandas` |
 
 [Open Project 1](Project-1-Short-term-Rainfall-Forecasting-and-Alert-System/)
@@ -53,7 +52,6 @@ Python implementation of the USDA Soil Conservation Service Curve Number method 
 | Python files | `scs_cn.py` · `test_scs_cn.py` · `sensitivity_analysis.py` |
 | Output files | `scs_cn_sensitivity.png` |
 | Docs | `Experiment2_SCSCN_Runoff.docx` · `report.tex` · `README.md` |
-| Screenshots | `screenshots/1.png` · `screenshots/2.png` · `screenshots/3.png` · `screenshots/4.png` · `screenshots/5.png` |
 | Dependencies | `numpy` · `matplotlib` · `pillow` · `pytest` |
 
 [Open Project 2](Project-2-Hydrological-Modeling-SCS-CN-Runoff/)
@@ -71,7 +69,6 @@ Seven-day reservoir release optimization with hydropower revenue, ecological rel
 | Python files | `reservoir_optimization.py` |
 | Output files | `optimal_schedule.csv` · `optimal_schedule_report.txt` · `validation_report.txt` · `tradeoff_analysis.png` |
 | Docs | `Experiment3_Reservoir_Optimization.docx` · `report.tex` · `README.md` |
-| Screenshots | `screenshots/1.png` · `screenshots/2.png` · `screenshots/3.png` · `screenshots/4.png` |
 | Dependencies | `numpy` · `scipy` · `matplotlib` · `pillow` |
 
 [Open Project 3](Project-3-Water-Resources-Optimization-Reservoir-Dispatch/)
@@ -89,7 +86,6 @@ DEM-based flood inundation analysis using a synthetic 100 x 100 terrain grid. Th
 | Python files | `generate_dem.py` · `flood_inundation.py` · `visualize_flood.py` · `flood_trend.py` · `validate_flood.py` · `write_report.py` |
 | Output files | `dem_synthetic_100x100.npy` · `dem_synthetic_100x100.csv` · `flood_inundation_plot.png` · `flood_trend_curve.png` · `validation_results.npz` |
 | Docs | `Experiment4_Flood_Inundation.docx` · `Flood_Inundation_Analysis_Report.docx` · `report.tex` · `README.md` |
-| Screenshots | `screenshots/1.png` · `screenshots/2.png` · `screenshots/3.png` · `screenshots/4.png` · `screenshots/5.png` |
 | Dependencies | `numpy` · `matplotlib` · `pillow` · `python-docx` |
 
 [Open Project 4](Project-4-Flood-Inundation-Analysis-DEM-based/)
@@ -126,4 +122,4 @@ Each project directory contains a `README.md` with setup and run instructions sp
 
 ---
 
-*Huang Qiwei · Software Development · 2026*
+*Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026*

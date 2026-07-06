@@ -1,34 +1,66 @@
-# Project 1 - Short-term Rainfall Forecasting and Alert System
+# Rainfall Forecasting & Alert System
 
-This experiment builds a multi-city rainfall monitoring dashboard for urban flood warning. It integrates OpenWeatherMap data when an API key is available and falls back to simulation mode for demonstration.
+**Specialized Experiment 1 · Xi'an Jiaotong University · Software Development 2026**
 
-## Key Features
+Real-time rainfall monitoring powered by the OpenWeatherMap API and Streamlit. The dashboard fetches or simulates live weather data, classifies rainfall intensity into three severity levels, logs every red alert, and renders current conditions in a multi-city interactive map.
 
-- Fetches current rainfall, temperature, and humidity for five Chinese cities.
-- Converts OpenWeather `3h` rainfall totals into hourly intensity when needed.
-- Classifies rainfall into green, yellow, and red warning levels.
-- Logs heavy-rainfall alerts with timestamped entries.
-- Displays a Folium rainfall map, color-coded city cards, and optional history table.
-- Supports a 5-minute refresh cadence when `streamlit-autorefresh` is installed.
+---
 
-## Files
+## Alert Classification
 
-- `weather_monitor.py` - Streamlit dashboard and alert logic.
-- `export_map.py` - Static map export helper.
-- `rainfall_history.csv` - Sample monitoring history.
-- `alert_log.txt` - Sample alert log.
-- `rainfall_map.html` - Exported map artifact.
-- `screenshots/` - Interaction screenshots and dashboard preview.
+| Severity | Threshold | Indicator |
+| --- | --- | --- |
+| Normal | `< 10 mm/h` | Green · no action |
+| Caution | `10-20 mm/h` | Yellow · elevated monitoring |
+| Heavy Rainfall | `>= 20 mm/h` | Red · flood-risk alert |
 
-## Run
+---
+
+## What's Inside
+
+| File | Role |
+| --- | --- |
+| `weather_monitor.py` | Streamlit dashboard; fetches rainfall, temperature, humidity, timestamp, and alert level |
+| `export_map.py` | Exports the Folium rainfall map to `rainfall_map.html` |
+| `alert_log.txt` | Timestamped history of triggered heavy-rainfall alerts |
+| `rainfall_history.csv` | Sample monitoring history for the dashboard table |
+| `rainfall_map.html` | Static exported map artifact |
+| `prompt_log.md` | Record of AI prompts and development iterations |
+| `Experiment1_Rainfall_Alert.docx` | Original experiment task document |
+| `report.tex` | Overleaf-ready experiment write-up |
+| `requirements.txt` | Python dependencies |
+
+---
+
+## Run It
 
 ```bash
+# clone and open this project
+git clone https://github.com/HuangQiwei123/QiweiHuang-s-homeworks.git
+cd QiweiHuang-s-homeworks
+git checkout project-1
+cd Project-1-Short-term-Rainfall-Forecasting-and-Alert-System
+
+# install
 pip install -r requirements.txt
+
+# launch
+# optional: set OPENWEATHER_API_KEY for live data
 streamlit run weather_monitor.py
 ```
 
-Set `OPENWEATHER_API_KEY` in the environment or Streamlit secrets for live weather data. Without a key, the app runs in simulation mode.
+---
 
-## Preview
+## Development Notes
 
-![Dashboard preview](screenshots/dashboard-page.png)
+Built through iterative AI-assisted development:
+
+- Round 1 -- API integration, rainfall parsing, and error handling.
+- Round 2 -- Threshold classification, alert logging, and physical-unit validation.
+- Round 3 -- Streamlit dashboard, Folium map, history table, and auto-refresh support.
+
+The app can run without an API key by switching to deterministic simulation mode, which makes the project easy to review in a classroom environment.
+
+---
+
+*Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026*
