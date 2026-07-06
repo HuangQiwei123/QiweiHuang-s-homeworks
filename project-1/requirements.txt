@@ -1,0 +1,6 @@
+folium
+pandas
+requests
+streamlit
+streamlit-autorefresh
+streamlit-folium

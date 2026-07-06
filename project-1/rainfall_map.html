@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7a8559ad5fc89a75f5c867b115c86289 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7a8559ad5fc89a75f5c867b115c86289" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7a8559ad5fc89a75f5c867b115c86289 = L.map(
+                "map_7a8559ad5fc89a75f5c867b115c86289",
+                {
+                    center: [35.86, 104.19],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_76569d07b7ac54a87fa70306a1e4f54b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_76569d07b7ac54a87fa70306a1e4f54b.addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+        
+    
+            var marker_40acabb0dd04ba5bbbb2a44eb27a9d4d = L.marker(
+                [39.91, 116.4],
+                {
+}
+            ).addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+        
+    
+            var icon_0e69f5570191fe74f45197af0bd79a05 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "cloud-rain",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ed844cc46078b1cbf161ba028ec3b2dc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1d36d205162d83a9536b160130526d52 = $(`<div id="html_1d36d205162d83a9536b160130526d52" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; min-width: 170px;">             <b style="font-size: 16px;">北京</b> <small>(Beijing)</small><br>             <hr style="margin: 6px 0;">             Rainfall: <b>0.1 mm/h</b><br>             Status: <span style="color:#4CAF50; font-weight:bold;">                 GREEN             </span><br>             <small>🌡 22.3°C  |  💧 72%</small><br>             <small>2026-05-13 15:57:10</small>         </div>         </div>`)[0];
+                popup_ed844cc46078b1cbf161ba028ec3b2dc.setContent(html_1d36d205162d83a9536b160130526d52);
+            
+        
+
+        marker_40acabb0dd04ba5bbbb2a44eb27a9d4d.bindPopup(popup_ed844cc46078b1cbf161ba028ec3b2dc)
+        ;
+
+        
+    
+    
+            marker_40acabb0dd04ba5bbbb2a44eb27a9d4d.bindTooltip(
+                `<div>
+                     北京 — 0.1 mm/h
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40acabb0dd04ba5bbbb2a44eb27a9d4d.setIcon(icon_0e69f5570191fe74f45197af0bd79a05);
+            
+    
+            var marker_b90df66e2cf8953bab6df9e1ddb8be5c = L.marker(
+                [31.23, 121.47],
+                {
+}
+            ).addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+        
+    
+            var icon_6be2cc5a79665cb5451059d7660b7617 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cloud-rain",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f67b743c83ba3ad7c416c178f351f188 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3800c471dcd446850089d2156657d3a2 = $(`<div id="html_3800c471dcd446850089d2156657d3a2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; min-width: 170px;">             <b style="font-size: 16px;">上海</b> <small>(Shanghai)</small><br>             <hr style="margin: 6px 0;">             Rainfall: <b>13.6 mm/h</b><br>             Status: <span style="color:#FF9800; font-weight:bold;">                 YELLOW             </span><br>             <small>🌡 21.6°C  |  💧 42%</small><br>             <small>2026-05-13 15:57:10</small>         </div>         </div>`)[0];
+                popup_f67b743c83ba3ad7c416c178f351f188.setContent(html_3800c471dcd446850089d2156657d3a2);
+            
+        
+
+        marker_b90df66e2cf8953bab6df9e1ddb8be5c.bindPopup(popup_f67b743c83ba3ad7c416c178f351f188)
+        ;
+
+        
+    
+    
+            marker_b90df66e2cf8953bab6df9e1ddb8be5c.bindTooltip(
+                `<div>
+                     上海 — 13.6 mm/h
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b90df66e2cf8953bab6df9e1ddb8be5c.setIcon(icon_6be2cc5a79665cb5451059d7660b7617);
+            
+    
+            var marker_a5009412614d3c871a0554116d5ccdea = L.marker(
+                [23.13, 113.26],
+                {
+}
+            ).addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+        
+    
+            var icon_592a29720d775d24d48bbf56d4193b36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "cloud-rain",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7fb6d7cc2fab07c57d3fc7b065e817cd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a22ae7db764d687f426f2af898f74173 = $(`<div id="html_a22ae7db764d687f426f2af898f74173" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; min-width: 170px;">             <b style="font-size: 16px;">广州</b> <small>(Guangzhou)</small><br>             <hr style="margin: 6px 0;">             Rainfall: <b>6.7 mm/h</b><br>             Status: <span style="color:#4CAF50; font-weight:bold;">                 GREEN             </span><br>             <small>🌡 29.9°C  |  💧 44%</small><br>             <small>2026-05-13 15:57:10</small>         </div>         </div>`)[0];
+                popup_7fb6d7cc2fab07c57d3fc7b065e817cd.setContent(html_a22ae7db764d687f426f2af898f74173);
+            
+        
+
+        marker_a5009412614d3c871a0554116d5ccdea.bindPopup(popup_7fb6d7cc2fab07c57d3fc7b065e817cd)
+        ;
+
+        
+    
+    
+            marker_a5009412614d3c871a0554116d5ccdea.bindTooltip(
+                `<div>
+                     广州 — 6.7 mm/h
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a5009412614d3c871a0554116d5ccdea.setIcon(icon_592a29720d775d24d48bbf56d4193b36);
+            
+    
+            var marker_212e004eda6fcb20a3f8b8c5d623dc62 = L.marker(
+                [30.57, 104.07],
+                {
+}
+            ).addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+        
+    
+            var icon_3a90e3ec6cb212e97126e333a99c2c2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cloud-rain",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22be9cf045930446aced23b301088e09 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_306915b18dc2a6bad1f7979e190db571 = $(`<div id="html_306915b18dc2a6bad1f7979e190db571" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; min-width: 170px;">             <b style="font-size: 16px;">成都</b> <small>(Chengdu)</small><br>             <hr style="margin: 6px 0;">             Rainfall: <b>15.9 mm/h</b><br>             Status: <span style="color:#FF9800; font-weight:bold;">                 YELLOW             </span><br>             <small>🌡 34.7°C  |  💧 49%</small><br>             <small>2026-05-13 15:57:10</small>         </div>         </div>`)[0];
+                popup_22be9cf045930446aced23b301088e09.setContent(html_306915b18dc2a6bad1f7979e190db571);
+            
+        
+
+        marker_212e004eda6fcb20a3f8b8c5d623dc62.bindPopup(popup_22be9cf045930446aced23b301088e09)
+        ;
+
+        
+    
+    
+            marker_212e004eda6fcb20a3f8b8c5d623dc62.bindTooltip(
+                `<div>
+                     成都 — 15.9 mm/h
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_212e004eda6fcb20a3f8b8c5d623dc62.setIcon(icon_3a90e3ec6cb212e97126e333a99c2c2a);
+            
+    
+            var marker_0a63612361f2f3c2dd68024c6aa52b44 = L.marker(
+                [30.59, 114.31],
+                {
+}
+            ).addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+        
+    
+            var icon_1ecf72edcb0940f18f0592a0e9a2413f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "cloud-rain",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3db8246985ef33213de5d7a8f92c0e7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b61892af457709bb1026c9bc0a59f3c9 = $(`<div id="html_b61892af457709bb1026c9bc0a59f3c9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; min-width: 170px;">             <b style="font-size: 16px;">武汉</b> <small>(Wuhan)</small><br>             <hr style="margin: 6px 0;">             Rainfall: <b>7.1 mm/h</b><br>             Status: <span style="color:#4CAF50; font-weight:bold;">                 GREEN             </span><br>             <small>🌡 30.8°C  |  💧 94%</small><br>             <small>2026-05-13 15:57:10</small>         </div>         </div>`)[0];
+                popup_f3db8246985ef33213de5d7a8f92c0e7.setContent(html_b61892af457709bb1026c9bc0a59f3c9);
+            
+        
+
+        marker_0a63612361f2f3c2dd68024c6aa52b44.bindPopup(popup_f3db8246985ef33213de5d7a8f92c0e7)
+        ;
+
+        
+    
+    
+            marker_0a63612361f2f3c2dd68024c6aa52b44.bindTooltip(
+                `<div>
+                     武汉 — 7.1 mm/h
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a63612361f2f3c2dd68024c6aa52b44.setIcon(icon_1ecf72edcb0940f18f0592a0e9a2413f);
+            
+    
+            var layer_control_c91cb14e7eedd35091162f84de32a6c2_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_76569d07b7ac54a87fa70306a1e4f54b,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_c91cb14e7eedd35091162f84de32a6c2 = L.control.layers(
+                layer_control_c91cb14e7eedd35091162f84de32a6c2_layers.base_layers,
+                layer_control_c91cb14e7eedd35091162f84de32a6c2_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_7a8559ad5fc89a75f5c867b115c86289);
+
+        
+</script>
+</html>
