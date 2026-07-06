@@ -1,124 +1,73 @@
-# Software Development -- Specialized Experiments
+# Rainfall Forecasting & Alert System
 
-**Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026**
+**Specialized Experiment 1 · Xi'an Jiaotong University · Software Development 2026**
 
-Four water-related engineering experiments built end-to-end with AI-assisted software development. Each project follows the same workflow: structured prompting, AI-generated code, iterative refinement, physical validation, and documented outputs.
-
----
-
-## Repository Structure
-
-```text
-QiweiHuang-s-homeworks/
-|-- Project-1-Short-term-Rainfall-Forecasting-and-Alert-System
-|   `-- Rainfall monitoring dashboard and warning logic
-|-- Project-2-Hydrological-Modeling-SCS-CN-Runoff
-|   `-- SCS-CN runoff calculation and sensitivity analysis
-|-- Project-3-Water-Resources-Optimization-Reservoir-Dispatch
-|   `-- Reservoir dispatch optimization and trade-off analysis
-`-- Project-4-Flood-Inundation-Analysis-DEM-based
-    `-- DEM-based flood simulation, visualization, and validation
-```
+Real-time rainfall monitoring powered by the OpenWeatherMap API and Streamlit. The dashboard fetches or simulates live weather data, classifies rainfall intensity into three severity levels, logs every red alert, and renders current conditions in a multi-city interactive map.
 
 ---
 
-## Projects at a Glance
+## Alert Classification
 
-### Project 1 -- Rainfall Forecasting and Alert System
+| Severity | Threshold | Indicator |
+| --- | --- | --- |
+| Normal | `< 10 mm/h` | Green · no action |
+| Caution | `10-20 mm/h` | Yellow · elevated monitoring |
+| Heavy Rainfall | `>= 20 mm/h` | Red · flood-risk alert |
 
-`branch: project-1`
+---
 
-Real-time rainfall monitoring using OpenWeatherMap data or simulation mode. The system classifies rainfall into Normal / Caution / Alert levels, logs red alerts, and displays current conditions through a multi-city Streamlit dashboard with a Folium map.
+## What's Inside
 
-| Category | Files |
+| File | Role |
 | --- | --- |
-| Python files | `weather_monitor.py` · `export_map.py` |
-| Output files | `alert_log.txt` · `rainfall_history.csv` · `rainfall_map.html` |
-| Docs | `Experiment1_Rainfall_Alert.docx` · `prompt_log.md` · `report.tex` · `README.md` |
-| Dependencies | `streamlit` · `streamlit-folium` · `folium` · `requests` · `pandas` |
-
-[Open Project 1](Project-1-Short-term-Rainfall-Forecasting-and-Alert-System/)
-
----
-
-### Project 2 -- SCS-CN Runoff Model
-
-`branch: project-2`
-
-Python implementation of the USDA Soil Conservation Service Curve Number method for estimating direct runoff from rainfall. The model includes boundary-condition tests, vectorized NumPy support, and sensitivity analysis across CN values.
-
-| Category | Files |
-| --- | --- |
-| Python files | `scs_cn.py` · `test_scs_cn.py` · `sensitivity_analysis.py` |
-| Output files | `scs_cn_sensitivity.png` |
-| Docs | `Experiment2_SCSCN_Runoff.docx` · `report.tex` · `README.md` |
-| Dependencies | `numpy` · `matplotlib` · `pillow` · `pytest` |
-
-[Open Project 2](Project-2-Hydrological-Modeling-SCS-CN-Runoff/)
+| `weather_monitor.py` | Streamlit dashboard; fetches rainfall, temperature, humidity, timestamp, and alert level |
+| `export_map.py` | Exports the Folium rainfall map to `rainfall_map.html` |
+| `alert_log.txt` | Timestamped history of triggered heavy-rainfall alerts |
+| `rainfall_history.csv` | Sample monitoring history for the dashboard table |
+| `rainfall_map.html` | Static exported map artifact |
+| `prompt_log.md` | Record of AI prompts and development iterations |
+| `Experiment1_Rainfall_Alert.docx` | Original experiment task document |
+| `report.tex` | Overleaf-ready experiment write-up |
+| `requirements.txt` | Python dependencies |
 
 ---
 
-### Project 3 -- Reservoir Dispatch Optimization
-
-`branch: project-3`
-
-Seven-day reservoir release optimization with hydropower revenue, ecological release, storage bounds, and mass-balance constraints. The workflow exports an optimal schedule, validates all physical constraints, and visualizes the revenue-ecology trade-off.
-
-| Category | Files |
-| --- | --- |
-| Python files | `reservoir_optimization.py` |
-| Output files | `optimal_schedule.csv` · `optimal_schedule_report.txt` · `validation_report.txt` · `tradeoff_analysis.png` |
-| Docs | `Experiment3_Reservoir_Optimization.docx` · `report.tex` · `README.md` |
-| Dependencies | `numpy` · `scipy` · `matplotlib` · `pillow` |
-
-[Open Project 3](Project-3-Water-Resources-Optimization-Reservoir-Dispatch/)
-
----
-
-### Project 4 -- Flood Inundation Analysis (DEM-based)
-
-`branch: project-4`
-
-DEM-based flood inundation analysis using a synthetic 100 x 100 terrain grid. The pipeline covers DEM generation, flood-mask calculation, depth and volume metrics, multi-level visualization, rising-water trend analysis, and physical-sense validation.
-
-| Category | Files |
-| --- | --- |
-| Python files | `generate_dem.py` · `flood_inundation.py` · `visualize_flood.py` · `flood_trend.py` · `validate_flood.py` · `write_report.py` |
-| Output files | `dem_synthetic_100x100.npy` · `dem_synthetic_100x100.csv` · `flood_inundation_plot.png` · `flood_trend_curve.png` · `validation_results.npz` |
-| Docs | `Experiment4_Flood_Inundation.docx` · `Flood_Inundation_Analysis_Report.docx` · `report.tex` · `README.md` |
-| Dependencies | `numpy` · `matplotlib` · `pillow` · `python-docx` |
-
-[Open Project 4](Project-4-Flood-Inundation-Analysis-DEM-based/)
-
----
-
-## Dependencies Summary
-
-| Project | Key Libraries |
-| --- | --- |
-| Project 1 | `streamlit` · `requests` · `pandas` · `folium` |
-| Project 2 | `numpy` · `matplotlib` · `pillow` · `pytest` |
-| Project 3 | `numpy` · `scipy` · `matplotlib` · `pillow` |
-| Project 4 | `numpy` · `matplotlib` · `pillow` · `python-docx` |
-
-All projects target Python 3.10+ and are self-contained with their own `requirements.txt`.
-
----
-
-## Clone and Switch
+## Run It
 
 ```bash
+# clone and open this project
 git clone https://github.com/HuangQiwei123/QiweiHuang-s-homeworks.git
 cd QiweiHuang-s-homeworks
+git checkout project-1
+cd Project-1-Short-term-Rainfall-Forecasting-and-Alert-System
 
-git checkout main       # full portfolio
-git checkout project-1  # Rainfall alert system
-git checkout project-2  # SCS-CN runoff model
-git checkout project-3  # Reservoir optimization
-git checkout project-4  # Flood inundation analysis
+# install
+pip install -r requirements.txt
+
+# launch
+# optional: set OPENWEATHER_API_KEY for live data
+streamlit run weather_monitor.py
 ```
 
-Each project directory contains a `README.md` with setup and run instructions specific to that experiment.
+---
+
+## Development Notes
+
+Built through iterative AI-assisted development:
+
+- Round 1 -- API integration, rainfall parsing, and error handling.
+- Round 2 -- Threshold classification, alert logging, and physical-unit validation.
+- Round 3 -- Streamlit dashboard, Folium map, history table, and auto-refresh support.
+
+The app can run without an API key by switching to deterministic simulation mode, which makes the project easy to review in a classroom environment.
+
+---
+
+## Effect Preview
+
+The final dashboard presents rainfall status cards, a multi-city map, warning-level coloring, and recent monitoring records in one Streamlit interface.
+
+![Rainfall dashboard preview](screenshots/dashboard-page.png)
 
 ---
 
