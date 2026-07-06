@@ -1,25 +1,67 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{booktabs}
-\title{Project 4: Flood Inundation Analysis}
-\author{Huang Qiwei}
-\date{2026}
+\usepackage{longtable}
+\title{Project 4: DEM-based Flood Inundation Analysis}
+\author{Huang Qiwei \\ 3125301141 \\ Xi'an Jiaotong University}
+\date{Software Development 2026}
+
 \begin{document}
 \maketitle
-\section*{Objective}
-This project analyzes flood inundation using synthetic DEM data and rising water levels.
-\section*{Workflow}
-The pipeline generates a 100 by 100 DEM, calculates flooded cells and inundation depth, visualizes flood extent at multiple water levels, and evaluates flood-area growth from 40 m to 50 m.
+
+\section*{Abstract}
+This experiment analyzes flood inundation using a synthetic digital elevation model (DEM). The workflow generates terrain data, computes flooded cells and inundation depth for specified water levels, visualizes flood extent, simulates rising water levels, and validates that results obey physical expectations.
+
+\section*{Objectives}
+\begin{itemize}
+  \item Generate or load a 100 by 100 DEM for reproducible analysis.
+  \item Implement flood-mask and flood-depth calculations.
+  \item Estimate flooded area percentage and flood volume.
+  \item Visualize terrain, flood extent, and flood depth at multiple water levels.
+  \item Validate monotonic flood-area growth as water level rises.
+\end{itemize}
+
+\section*{Flood Inundation Logic}
+For each DEM cell, flooding is defined by:
+\[
+\text{flooded} = \text{elevation} < \text{water level}.
+\]
+Depth is calculated as:
+\[
+\text{depth} = \max(\text{water level} - \text{elevation}, 0).
+\]
+Flooded area percentage is:
+\[
+\frac{\text{flooded cells}}{\text{total cells}} \times 100\%.
+\]
+
+\section*{Implementation}
+The project is divided into modular scripts. \texttt{generate\_dem.py} creates a synthetic DEM, \texttt{flood\_inundation.py} contains the core calculations, \texttt{visualize\_flood.py} creates multi-level maps, \texttt{flood\_trend.py} analyzes rising-water response, and \texttt{validate\_flood.py} performs physical-sense checks.
+
 \section*{Outputs}
-\begin{tabular}{ll}
+\begin{longtable}{ll}
 \toprule
 Artifact & Description \\
 \midrule
-\texttt{flood\_inundation\_plot.png} & DEM, flood extent, and depth comparison \\
-\texttt{flood\_trend\_curve.png} & Water level vs. flooded area curve \\
+\texttt{dem\_synthetic\_100x100.npy} & Binary DEM data \\
+\texttt{dem\_synthetic\_100x100.csv} & CSV version of the DEM \\
+\texttt{flood\_inundation\_plot.png} & Terrain, extent, and depth comparison \\
+\texttt{flood\_trend\_curve.png} & Water-level vs. inundated-area trend \\
 \texttt{validation\_results.npz} & Validation data archive \\
+\texttt{Flood\_Inundation\_Analysis\_Report.docx} & Generated workflow report \\
 \bottomrule
-\end{tabular}
+\end{longtable}
+
+\section*{Results}
+The generated maps show that inundation expands from low-lying terrain as the water level rises. The trend curve from 40 m to 50 m confirms a monotonic increase in flooded area, indicating physically reasonable spatial behavior.
+
 \section*{Validation}
-The validation suite tests 101 water levels and confirms all 506 physical checks pass, including non-negative depths, correct maximum depth, and monotonic flood-area growth.
+The validation suite checks 101 water levels and 506 total conditions. These include percentage bounds, correct maximum depth, non-negative depth values, mask-depth consistency, exact depth calculation in flooded cells, and monotonic area growth. All checks pass in the supplied validation output.
+
+\section*{AI-assisted Development Notes}
+AI assistance was used to decompose the workflow into DEM generation, core calculation, visualization, trend analysis, validation, and report generation. The final code was refined to include input checks and plotting fallbacks for environments without Matplotlib.
+
+\section*{Limitations and Future Work}
+The DEM is synthetic and uses simple water-level comparison rather than hydraulic routing. Future extensions could include real watershed DEMs, connected-component inundation logic, building barriers, flow routing, and animated rising-water outputs.
+
 \end{document}

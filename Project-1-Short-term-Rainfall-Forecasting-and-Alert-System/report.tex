@@ -2,25 +2,58 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{longtable}
 \title{Project 1: Short-term Rainfall Forecasting and Alert System}
-\author{Huang Qiwei}
-\date{2026}
+\author{Huang Qiwei \\ 3125301141 \\ Xi'an Jiaotong University}
+\date{Software Development 2026}
+
 \begin{document}
 \maketitle
-\section*{Objective}
-This project builds a rainfall monitoring dashboard that fetches or simulates city-scale rainfall intensity, classifies warning levels, logs red alerts, and visualizes results through Streamlit and Folium.
-\section*{Implementation}
-The core script is \texttt{weather\_monitor.py}. It supports OpenWeatherMap data, simulation fallback, alert-level classification, timestamped alert logs, historical data export, and a five-minute refresh cadence.
-\section*{Outputs}
-\begin{tabular}{ll}
+
+\section*{Abstract}
+This experiment develops a short-term rainfall monitoring and alert system for urban flood-risk awareness. The system integrates OpenWeatherMap data when an API key is available, provides a deterministic simulation mode for classroom review, classifies rainfall intensity into warning levels, logs heavy-rainfall events, and presents results through a Streamlit dashboard with a Folium map.
+
+\section*{Objectives}
+\begin{itemize}
+  \item Integrate an external weather API with robust error handling.
+  \item Convert rainfall data into physically meaningful intensity units.
+  \item Implement threshold-based warning logic and alert logging.
+  \item Build an interactive dashboard for multi-city rainfall monitoring.
+  \item Record AI-assisted development steps and corrections.
+\end{itemize}
+
+\section*{Methodology}
+The core application is \texttt{weather\_monitor.py}. It fetches weather observations by latitude and longitude, extracts rainfall intensity, and classifies each city using three thresholds: Normal, Caution, and Heavy Rainfall. OpenWeatherMap sometimes reports three-hour rainfall totals, so the implementation converts \texttt{3h} rainfall to an hourly intensity to keep the warning logic consistent in mm/h.
+
+\section*{Alert Logic}
+\begin{longtable}{lll}
 \toprule
-Artifact & Description \\
+Level & Threshold & Action \\
 \midrule
-\texttt{rainfall\_map.html} & Static map output \\
-\texttt{rainfall\_history.csv} & Monitoring history \\
-\texttt{alert\_log.txt} & Timestamped alert records \\
+Normal & $<10$ mm/h & Display green status and no warning action \\
+Caution & $10$--$20$ mm/h & Display yellow status and elevated monitoring \\
+Heavy Rainfall & $\geq 20$ mm/h & Display red alert and append event to log \\
 \bottomrule
-\end{tabular}
+\end{longtable}
+
+\section*{Implementation Details}
+\begin{itemize}
+  \item \textbf{Data acquisition:} requests weather data from OpenWeatherMap or uses simulated rainfall when no API key is configured.
+  \item \textbf{Persistence:} writes rainfall observations to \texttt{rainfall\_history.csv} and warning events to \texttt{alert\_log.txt}.
+  \item \textbf{Visualization:} uses Streamlit layout components, city cards, a styled data table, and a Folium map.
+  \item \textbf{Reliability:} catches request exceptions and avoids repeated logging of the same alert during short refresh intervals.
+\end{itemize}
+
+\section*{Results}
+The dashboard successfully shows rainfall status for five representative Chinese cities. The generated map, current-rainfall cards, and alert banner provide a compact decision-support interface. The included screenshot demonstrates the final dashboard layout and confirms that the workflow produces reviewable visual evidence.
+
 \section*{Validation}
-The system checks threshold behavior, handles API failures gracefully, and keeps rainfall values in physically reasonable units of mm/h.
+The main physical checks are rainfall-unit consistency, threshold correctness, timestamped logging, and graceful behavior under missing API keys. Simulation mode allows the same interface to be tested without external credentials, while live mode is available through \texttt{OPENWEATHER\_API\_KEY}.
+
+\section*{AI-assisted Development Notes}
+The project was refined over multiple prompting rounds: API access and JSON parsing, threshold classification and file logging, dashboard organization, map integration, and robustness improvements. AI output was checked against the hydrological requirement that rainfall warning thresholds must be interpreted as hourly intensity.
+
+\section*{Limitations and Future Work}
+The current system monitors selected cities rather than a gridded rainfall field. Future improvements could include forecast nowcasting, e-mail or SMS notification, rainfall radar integration, and persistent database storage for long-term monitoring.
+
 \end{document}
