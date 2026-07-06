@@ -63,4 +63,12 @@ The app can run without an API key by switching to deterministic simulation mode
 
 ---
 
+## Effect Preview
+
+The final dashboard presents rainfall status cards, a multi-city map, warning-level coloring, and recent monitoring records in one Streamlit interface.
+
+![Rainfall dashboard preview](screenshots/dashboard-page.png)
+
+---
+
 *Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026*

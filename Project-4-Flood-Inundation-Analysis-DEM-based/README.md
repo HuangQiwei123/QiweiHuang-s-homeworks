@@ -69,4 +69,14 @@ The validation workflow checks 506 physical conditions, including area bounds, n
 
 ---
 
+## Result Preview
+
+The flood-map figure compares terrain, inundation extent, and depth at multiple water levels. The trend curve shows the monotonic rise in inundated area as water level increases.
+
+![Flood inundation comparison](flood_inundation_plot.png)
+
+![Flood trend curve](flood_trend_curve.png)
+
+---
+
 *Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026*

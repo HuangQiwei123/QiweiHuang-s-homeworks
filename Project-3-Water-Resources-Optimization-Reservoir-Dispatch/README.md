@@ -63,4 +63,12 @@ The script uses SciPy SLSQP when available. If SciPy is unavailable, it automati
 
 ---
 
+## Result Preview
+
+The trade-off figure summarizes how hydropower revenue changes as ecological deficit is relaxed, making the operating-policy compromise easy to inspect.
+
+![Reservoir dispatch trade-off](tradeoff_analysis.png)
+
+---
+
 *Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026*

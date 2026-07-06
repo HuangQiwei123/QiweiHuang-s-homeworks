@@ -63,4 +63,12 @@ The plotting script includes a Pillow fallback so the result figure can still be
 
 ---
 
+## Result Preview
+
+The generated figure compares fixed-rainfall CN sensitivity and rainfall-runoff curves for multiple curve numbers.
+
+![SCS-CN sensitivity result](scs_cn_sensitivity.png)
+
+---
+
 *Huang Qiwei · 3125301141 · Software Development · Xi'an Jiaotong University · 2026*
