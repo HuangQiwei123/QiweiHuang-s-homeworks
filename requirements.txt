@@ -1,12 +1,4 @@
-folium
 matplotlib
 numpy
-pandas
 pillow
-pytest
-requests
-scipy
-streamlit
-streamlit-autorefresh
-streamlit-folium
 python-docx
