@@ -1,0 +1,25 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\title{Project 3: Reservoir Dispatch Optimization}
+\author{Huang Qiwei}
+\date{2026}
+\begin{document}
+\maketitle
+\section*{Objective}
+This project optimizes seven-day reservoir releases under hydropower revenue, ecological release, storage, and mass-balance constraints.
+\section*{Optimization}
+The implementation uses SciPy SLSQP when available and a linear fallback solver in lightweight environments. The objective is to compare revenue-oriented and ecology-oriented operating policies.
+\section*{Outputs}
+\begin{tabular}{ll}
+\toprule
+Artifact & Description \\
+\midrule
+\texttt{optimal\_schedule.csv} & Daily release schedule \\
+\texttt{validation\_report.txt} & Constraint checks \\
+\texttt{tradeoff\_analysis.png} & Revenue-ecology trade-off figure \\
+\bottomrule
+\end{tabular}
+\section*{Validation}
+The validation report checks release bounds, storage bounds, and daily mass balance. The generated hard-ecology solution satisfies all physical constraints.
+\end{document}

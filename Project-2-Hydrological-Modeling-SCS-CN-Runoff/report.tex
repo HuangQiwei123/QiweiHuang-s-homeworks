@@ -1,0 +1,26 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\title{Project 2: SCS-CN Runoff Model}
+\author{Huang Qiwei}
+\date{2026}
+\begin{document}
+\maketitle
+\section*{Objective}
+This project implements the SCS Curve Number method for estimating direct runoff from precipitation.
+\section*{Method}
+The model computes retention \(S = 25400/CN - 254\), initial abstraction \(I_a = 0.2S\), and runoff \(Q = (P-I_a)^2/(P-I_a+S)\) when rainfall exceeds initial abstraction.
+\section*{Boundary Conditions}
+\begin{tabular}{ll}
+\toprule
+Condition & Behavior \\
+\midrule
+\(P \le I_a\) & \(Q = 0\) \\
+\(CN = 0\) & complete infiltration \\
+\(CN = 100\) & \(Q = P\) \\
+\(Q > P\) & clipped to \(P\) \\
+\bottomrule
+\end{tabular}
+\section*{Outputs}
+The script \texttt{sensitivity\_analysis.py} generates \texttt{scs\_cn\_sensitivity.png}, showing runoff sensitivity to curve number and precipitation depth.
+\end{document}

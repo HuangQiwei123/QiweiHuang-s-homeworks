@@ -1,0 +1,26 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\title{Project 1: Short-term Rainfall Forecasting and Alert System}
+\author{Huang Qiwei}
+\date{2026}
+\begin{document}
+\maketitle
+\section*{Objective}
+This project builds a rainfall monitoring dashboard that fetches or simulates city-scale rainfall intensity, classifies warning levels, logs red alerts, and visualizes results through Streamlit and Folium.
+\section*{Implementation}
+The core script is \texttt{weather\_monitor.py}. It supports OpenWeatherMap data, simulation fallback, alert-level classification, timestamped alert logs, historical data export, and a five-minute refresh cadence.
+\section*{Outputs}
+\begin{tabular}{ll}
+\toprule
+Artifact & Description \\
+\midrule
+\texttt{rainfall\_map.html} & Static map output \\
+\texttt{rainfall\_history.csv} & Monitoring history \\
+\texttt{alert\_log.txt} & Timestamped alert records \\
+\bottomrule
+\end{tabular}
+\section*{Validation}
+The system checks threshold behavior, handles API failures gracefully, and keeps rainfall values in physically reasonable units of mm/h.
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\title{Project 4: Flood Inundation Analysis}
+\author{Huang Qiwei}
+\date{2026}
+\begin{document}
+\maketitle
+\section*{Objective}
+This project analyzes flood inundation using synthetic DEM data and rising water levels.
+\section*{Workflow}
+The pipeline generates a 100 by 100 DEM, calculates flooded cells and inundation depth, visualizes flood extent at multiple water levels, and evaluates flood-area growth from 40 m to 50 m.
+\section*{Outputs}
+\begin{tabular}{ll}
+\toprule
+Artifact & Description \\
+\midrule
+\texttt{flood\_inundation\_plot.png} & DEM, flood extent, and depth comparison \\
+\texttt{flood\_trend\_curve.png} & Water level vs. flooded area curve \\
+\texttt{validation\_results.npz} & Validation data archive \\
+\bottomrule
+\end{tabular}
+\section*{Validation}
+The validation suite tests 101 water levels and confirms all 506 physical checks pass, including non-negative depths, correct maximum depth, and monotonic flood-area growth.
+\end{document}
